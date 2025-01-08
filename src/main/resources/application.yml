@@ -1,0 +1,52 @@
+spring:
+  profiles:
+    active: dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#spring.application.name=journal-app
+#spring.data.mongodb.host=localhost
+#spring.data.mongodb.port=27017
+#spring.data.mongodb.database=journaldb
+#spring.data.mongodb.uri=mongodb+srv://sambhajishinde:spring@cluster0.adflu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#spring.data.mongodb.auto-index-creation=true
+
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb+srv://sambhajishinde:spring@cluster0.adflu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#      database: journaldb
+#      auto-index-creation: true
+#
+#server:
+#  port: 8081
+#  servlet:
+#    context-path: /journal
+
+
+
+
+
+
+
+
+
+
