@@ -1,8 +1,10 @@
 package net.engineersdigest.journal.app.controller;
 
+import net.engineersdigest.journal.app.api.response.WeatherResponse;
 import net.engineersdigest.journal.app.entity.User;
 import net.engineersdigest.journal.app.repository.UserRepo;
 import net.engineersdigest.journal.app.service.UserService;
+import net.engineersdigest.journal.app.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +23,15 @@ public class UserController {
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    private WeatherService weatherService;
+
 
     @PutMapping()
-    public ResponseEntity<?> updateUser(@RequestBody User user){
-        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+    public ResponseEntity<?> updateUser(@RequestBody User user) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userName = authentication.getName();
-        User oldUser= userService.findByUserName(userName);
+        User oldUser = userService.findByUserName(userName);
         oldUser.setUserName(user.getUserName());
         oldUser.setPassword(user.getPassword());
 
@@ -35,12 +40,38 @@ public class UserController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> deleteUserByName(){
+    public ResponseEntity<?> deleteUserByName() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         userRepo.deleteByUserName(authentication.getName());
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
+
+    @GetMapping
+    public ResponseEntity<?> greeting() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+       WeatherResponse weatherResponse = weatherService.getWeather("pune");
+       String greeting="";
+       if(weatherResponse != null) {
+          greeting = "Weather feel like " + weatherResponse.getCurrent();
+       }
+
+       return new ResponseEntity<>("Hi " + authentication.getName() + greeting,HttpStatus.OK);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //  @PutMapping("{userName}")
@@ -67,4 +98,4 @@ public class UserController {
 //        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 //
 //    }
-}
+

@@ -1,5 +1,6 @@
 package net.engineersdigest.journal.app.service;
 
+import net.engineersdigest.journal.app.cache.AppCache;
 import net.engineersdigest.journal.app.entity.JournalEntry;
 import net.engineersdigest.journal.app.entity.User;
 import net.engineersdigest.journal.app.repository.JournalEntryRepo;
@@ -7,16 +8,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 
-@Component
+@Service
 public class JournalEntryService {
 
     @Autowired
     private JournalEntryRepo journalEntryRepo;
+
+
 
     @Autowired
     private UserService userService;
