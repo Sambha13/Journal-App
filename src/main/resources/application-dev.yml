@@ -7,9 +7,17 @@ spring:
 
 server:
   port: 8080
+  servlet:
+    context-path: /journal
+
+weather:
+  api:
+    key: f652bc0dade640ec206ec1c8400eb164
 
 
-#logging:
+
+
+  #logging:
 #    level:
 #      net:
 #        engineersdigest:
