@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Document(collection = "confi_journal_app")
+@Document(collection = "config_journal_app")
 @Data
 @NoArgsConstructor
 public class ConfigJournalAppEntity {
