@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,7 +25,7 @@ public class WeatherService {
     private RestTemplate restTemplate;
      public WeatherResponse getWeather(String city){
 
-          String finalAPI = appCache.APP_CACHE.get("weather_api").replace("<city>",city).replace("<apikey>",apikey);
+          String finalAPI = appCache.app_cache.get(AppCache.keys.WEATHER_API.toString()).replace("<city>",city).replace("<apikey>",apikey);
           ResponseEntity<WeatherResponse> response = restTemplate.exchange(finalAPI, HttpMethod.GET, null, WeatherResponse.class);
          WeatherResponse body = response.getBody();
          return body;
