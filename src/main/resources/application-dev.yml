@@ -4,6 +4,23 @@ spring:
       uri: mongodb+srv://sambhajishinde:spring@cluster0.adflu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
       database: journaldb
       auto-index-creation: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sambhashinde1313@gmail.com  # Use your email address here
+    password: mkyd byic iwkc wcmk       # Use your app-specific password here
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+
+
+
+
 
 server:
   port: 8080

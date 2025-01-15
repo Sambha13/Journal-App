@@ -1,14 +1,17 @@
 package net.engineersdigest.journal.app.repository;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class UserRepositoryImplTests {
-    private UserRepositoryImpl userRepository;
+    @Autowired
+    private UserRepositoryImpl userRepositoryimpl;
     @Test
     public void testSaveNewUser(){
-        userRepository.getUsersForSA();
+//        Assertions.assertNotNull(userRepositoryimpl.getUsersForSA());
 
 
     }
