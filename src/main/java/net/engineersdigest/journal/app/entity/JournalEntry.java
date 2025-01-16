@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import net.engineersdigest.journal.app.enums.Sentiment;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,4 +20,7 @@ public class JournalEntry {
      private String id;
      private String title;
      private String content;
+     private Sentiment sentiment;
+
+
 }

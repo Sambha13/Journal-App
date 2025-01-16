@@ -29,7 +29,7 @@ public class UserScheduler {
     private AppCache appCache;
 
     //@Scheduled(cron = "0 0/1 * 1/1 * ?")//Run every minutes
-    @Scheduled(cron = "0 0 9 ? * SUN *")
+    @Scheduled(cron = "0 0 9 ? * SUN")
     public void fetchUserAndSendEmail(){
 
         List<User> users = userRepository.getUsersForSA();
