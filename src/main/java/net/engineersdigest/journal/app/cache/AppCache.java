@@ -15,6 +15,8 @@ public class AppCache {
 
     @Autowired
     ConfigJournalAppRepository configJournalAppRepository;
+
+
     public Map<String, String> app_cache ;
     public  enum keys{
         WEATHER_API
@@ -29,6 +31,8 @@ public class AppCache {
        }
 
     }
+
+
 
 
 }
