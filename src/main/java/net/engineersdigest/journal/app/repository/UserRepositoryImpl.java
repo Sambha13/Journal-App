@@ -16,13 +16,13 @@ public class UserRepositoryImpl {
     private MongoTemplate mongoTemplate;
 
     public List<User> getUsersForSA() {
-//        Query query = new Query();
-//        query.addCriteria(Criteria.where("email").exists(true));  // Ensure email exists
-//        query.addCriteria(Criteria.where("sentimentAnalysis").is(true));  // Check sentimentAnalysis is true
-//        query.addCriteria(Criteria.where("email").ne(null).ne(""));  // Ensure email is not null or empty
-//
-//        // Use the query object with mongoTemplate.find()
-//        return mongoTemplate.find(query, User.class);
-        return null;
+        Query query = new Query();
+
+        // Use Criteria where both conditions need to be true
+        query.addCriteria(Criteria.where("email").exists(true).and("sentimentAnalysis").is(true));
+
+        // Use the query object with mongoTemplate.find()
+        return mongoTemplate.find(query, User.class);
     }
+
 }

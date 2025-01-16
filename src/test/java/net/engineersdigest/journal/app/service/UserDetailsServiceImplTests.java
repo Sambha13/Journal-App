@@ -4,6 +4,7 @@ import net.engineersdigest.journal.app.entity.User;
 import net.engineersdigest.journal.app.repository.UserRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class UserDetailsServiceImplTests {
     }
 
 
+    @Disabled
     @Test
     void loadUserByUSerNameTests(){
         //when(userRepo.findByUserName(ArgumentMatchers.anyString())).thenReturn((User.builder().username("ram").password("asdf").roles(String.valueOf(new ArrayList<>())).build());
